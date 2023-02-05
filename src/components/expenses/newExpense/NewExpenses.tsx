@@ -1,10 +1,24 @@
 
 import './index.css';
 import ExpenseForm from "./form/ExpenseForm";
-function NewExpenses () {
+import Expenses from "../../models/expenses";
+
+type Props = {
+    onAddExpense: Function
+}
+function NewExpenses (props: Props) {
+
+    const saveNewExpenseData = (enteredExpenseData : Expenses) => {
+        const expenseData = {
+            ...enteredExpenseData,
+            id: Math.random().toString()
+        }
+        props.onAddExpense(expenseData)
+    }
+
     return (
         <div className="new-expense">
-            <ExpenseForm/>
+            <ExpenseForm onNewExpenseData={saveNewExpenseData}/>
         </div>
     )
 }

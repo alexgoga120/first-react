@@ -1,8 +1,10 @@
-type ExpensesMain =
+import {Key} from "react";
+
+interface ExpensesMain
     {
-        id: String;
-        title: String;
-        amount: Number;
+        id: Key;
+        title: string;
+        amount: number;
         date: Date;
     }
 
