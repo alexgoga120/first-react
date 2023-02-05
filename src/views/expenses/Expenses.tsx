@@ -1,7 +1,7 @@
 import NewExpenses from "../../components/expenses/newExpense/NewExpenses";
 import ExpenseBody from "../../components/expenses/expenseBody/ExpenseBody";
 import {useState} from "react";
-import ExpensesMain from "../../components/models/expenses";
+import ExpensesMain from "../../components/models/IExpenses";
 
 function Expenses() {
     const expensesBase: ExpensesMain[] = [

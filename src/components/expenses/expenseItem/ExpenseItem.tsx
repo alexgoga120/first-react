@@ -15,13 +15,15 @@ function ExpenseItem(props: Props) {
     const expensesAmount: Number = props.amount;
 
     return (
-        <ReactCard className="expense-item">
-            <ExpenseDate date={expensesDate}/>
-            <div className="expense-item__description">
-                <ExpenseTitle title={props.title}/>
-                <ExpenseAmount amount={`$${expensesAmount.toString()}`}></ExpenseAmount>
-            </div>
-        </ReactCard>
+        <li>
+            <ReactCard className="expense-item">
+                <ExpenseDate date={expensesDate}/>
+                <div className="expense-item__description">
+                    <ExpenseTitle title={props.title}/>
+                    <ExpenseAmount amount={`$${expensesAmount.toString()}`}></ExpenseAmount>
+                </div>
+            </ReactCard>
+        </li>
     );
 }
 

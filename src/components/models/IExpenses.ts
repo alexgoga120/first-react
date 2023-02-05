@@ -1,6 +1,6 @@
 import {Key} from "react";
 
-interface ExpensesMain
+interface IExpenses
     {
         id: Key;
         title: string;
@@ -8,4 +8,4 @@ interface ExpensesMain
         date: Date;
     }
 
-export default ExpensesMain
+export default IExpenses

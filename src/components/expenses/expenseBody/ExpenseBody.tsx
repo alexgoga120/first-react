@@ -1,13 +1,13 @@
 import "./index.css"
-import ExpenseItem from "../expenseItem/ExpenseItem";
-import Expenses from "../../models/expenses";
+import IExpenses from "../../models/IExpenses";
 import ReactCard from "../../commons/cardComp/ReactCard";
 import React, {useState} from "react";
 import ExpenseFilter from "../expenseFilter/ExpenseFilter";
+import ExpenseList from "../expenseList/ExpenseList";
 
 type Props = {
-    expenses: Expenses[],
-    expensesFilter: Expenses[] | undefined,
+    expenses: IExpenses[],
+    expensesFilter: IExpenses[] | undefined,
     onFilterChange: Function
 }
 
@@ -20,16 +20,7 @@ function ExpenseBody(props: Props) {
         props.onFilterChange(filter);
     }
 
-    const showExpenses = () => {
-        const expensesList = props.expensesFilter || props.expenses;
-        return expensesList.map((expense: Expenses) => (
-            <ExpenseItem
-                key={expense.id}
-                amount={expense.amount}
-                date={expense.date}
-                title={expense.title}/>
-        ))
-    }
+
 
     return (
         <ReactCard className="expenses">
@@ -37,9 +28,8 @@ function ExpenseBody(props: Props) {
                            filteredYear={filteredYear}
                            onFilterChange={filterChangeHandler}
             />
-            <>{
-                showExpenses()
-            }</>
+
+            <ExpenseList expenses={props.expensesFilter || props.expenses}/>
 
         </ReactCard>
     )

@@ -1,7 +1,7 @@
 
 import './index.css';
 import ExpenseForm from "./form/ExpenseForm";
-import Expenses from "../../models/expenses";
+import Expenses from "../../models/IExpenses";
 
 type Props = {
     onAddExpense: Function
