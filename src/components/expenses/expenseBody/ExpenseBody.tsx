@@ -1,13 +1,14 @@
 import "./index.css"
-import IExpenses from "../../models/IExpenses";
+import Expenses from "../../../models/Expenses";
 import ReactCard from "../../commons/cardComp/ReactCard";
 import React, {useState} from "react";
 import ExpenseFilter from "../expenseFilter/ExpenseFilter";
 import ExpenseList from "../expenseList/ExpenseList";
+import ExpenseChart from "../expenseChart/ExpenseChart";
 
 type Props = {
-    expenses: IExpenses[],
-    expensesFilter: IExpenses[] | undefined,
+    expenses: Expenses[],
+    expensesFilter: Expenses[] | undefined,
     onFilterChange: Function
 }
 
@@ -28,7 +29,7 @@ function ExpenseBody(props: Props) {
                            filteredYear={filteredYear}
                            onFilterChange={filterChangeHandler}
             />
-
+            <ExpenseChart expenses={props.expensesFilter || props.expenses}/>
             <ExpenseList expenses={props.expensesFilter || props.expenses}/>
 
         </ReactCard>

@@ -8,7 +8,8 @@ import React, {useState} from "react";
 // }
 
 type Props = {
-    onNewExpenseData: Function
+    onNewExpenseData: Function,
+    onCancelSubmit: React.MouseEventHandler<HTMLButtonElement>
 }
 
 function ExpenseForm(props : Props) {
@@ -89,6 +90,7 @@ function ExpenseForm(props : Props) {
                 </div>
             </div>
             <div className="new-expense__actions">
+                <button onClick={props.onCancelSubmit}>Cancelar</button>
                 <button type="submit">Añadir gasto</button>
             </div>
         </form>

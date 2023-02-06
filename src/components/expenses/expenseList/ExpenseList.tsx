@@ -1,10 +1,10 @@
 import ExpenseItem from "../expenseItem/ExpenseItem";
 import React from "react";
-import IExpenses from "../../models/IExpenses";
+import Expenses from "../../../models/Expenses";
 import "./index.css"
 
 type Props = {
-    expenses: IExpenses[]
+    expenses: Expenses[]
 }
 
 function ExpenseList(props: Props): JSX.Element {
@@ -15,7 +15,7 @@ function ExpenseList(props: Props): JSX.Element {
     }
     return <ul className="expenses-list">
         {
-            expensesList.map((expense: IExpenses) => (
+            expensesList.map((expense: Expenses) => (
                 <ExpenseItem
                     key={expense.id}
                     amount={expense.amount}
